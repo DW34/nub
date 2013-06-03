@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Tentoring::Application.config.secret_token = 'a958105845122ae1d6202bba2766d60f880352fe33d2f22d5755c4eec5f33afd5e52337f49bbb9f7b8c78436b0f84653b479e149a7232a480fd7176c69958c5d'
+Tentoring::Application.config.secret_token = '30fec043f45e8d1c6e5dfbcbc06e17dc4217a48f10c5cecaba376e92a9d5d1768018d9024f388fce21bfc89fceb9735ae393b791f06736bea7504e31c8e05640'
