@@ -1,8 +1,8 @@
-Tentoring::Application.routes.draw do
-  authenticated :user do
+Nub::Application.routes.draw do
+  authenticated :person do
     root :to => 'home#index'
   end
   root :to => "home#index"
-  devise_for :users
-  resources :users
+  devise_for :people
+  resources :people
 end

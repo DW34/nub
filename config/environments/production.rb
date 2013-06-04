@@ -1,4 +1,4 @@
-Tentoring::Application.configure do
+Nub::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -67,7 +67,7 @@ Tentoring::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"  
+  config.action_mailer.default :charset => "utf-8"
 
     config.action_mailer.smtp_settings = {
       :address   => "smtp.mandrillapp.com",

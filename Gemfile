@@ -5,6 +5,16 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+group :development do
+  gem 'rack-mini-profiler'
+  gem "better_errors", ">= 0.7.2"
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'bullet'
+  gem 'quiet_assets'
+end
+gem 'omniauth', '~> 1.1.4'
+gem 'omniauth-twitter', '~> 0.0.16'
 gem 'jquery-rails'
 gem "unicorn", ">= 4.3.1"
 gem "pg", ">= 0.15.0"
@@ -22,13 +32,18 @@ gem "rb-fsevent", ">= 0.9.3", :group => :development, :require => false
 gem "rb-fchange", ">= 0.0.6", :group => :development, :require => false
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
 gem "compass-rails", ">= 1.0.3", :group => :assets
-gem "zurb-foundation", ">= 4.0.9", :group => :assets
 gem "devise", ">= 2.2.3"
+gem 'devise-async', '0.7.0'
 gem "devise_invitable", ">= 1.1.5"
 gem "cancan", ">= 1.6.9"
 gem "rolify", ">= 3.2.0"
 gem "simple_form", ">= 2.1.0"
-gem "quiet_assets", ">= 1.0.2", :group => :development
-gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+gem "susy", ">=1.0.8"
+gem "thin"
+gem "active_record_inline_schema"
+gem 'slugged'
+gem 'dalli'
+gem 'memcachier'
+gem 'resque'

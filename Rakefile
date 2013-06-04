@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Tentoring::Application.load_tasks
+Nub::Application.load_tasks

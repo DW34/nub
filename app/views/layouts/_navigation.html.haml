@@ -1,17 +1,17 @@
-= link_to "Tentoring", root_path, :class => 'brand'
+= link_to "Nub", root_path, :class => 'brand'
 %ul.nav
-  - if user_signed_in?
+  - if person_signed_in?
     %li
-      = link_to 'Logout', destroy_user_session_path, :method=>'delete'
+      = link_to 'Logout', destroy_person_session_path, :method=>'delete'
   - else
     %li
-      = link_to 'Login', new_user_session_path
-  - if user_signed_in?
+      = link_to 'Login', new_person_session_path
+  - if person_signed_in?
     %li
-      = link_to 'Edit account', edit_user_registration_path
-    - if current_user.has_role? :admin
+      = link_to 'Edit account', edit_person_registration_path
+    - if current_person.has_role? :admin
       %li
-        = link_to 'Admin', users_path
+        = link_to 'Admin', people_path
   - else
     %li
-      = link_to 'Sign up', new_user_registration_path
+      = link_to 'Sign up', new_person_registration_path

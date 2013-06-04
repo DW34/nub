@@ -1,4 +1,6 @@
-Tentoring::Application.configure do
+$stdout.sync = true
+
+Nub::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -19,7 +21,7 @@ Tentoring::Application.configure do
   # change to true to allow email to be sent during development
   config.action_mailer.perform_deliveries = false
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"  
+  config.action_mailer.default :charset => "utf-8"
 
     config.action_mailer.smtp_settings = {
       :address   => "smtp.mandrillapp.com",
