@@ -5,44 +5,7 @@ html, body {
 .wrapper {
   min-height: 100%;
   height: 100%;
-}
-
-
-.signed_in .wrapper {
-  @media screen and (min-width: 26em) {
-    margin-left: 5em;
-  }
-}
-
-.signed_out .wrapper {
-  @include padding-leader(2);
-}
-
-.content {
   @include clearfix();
-  margin-left: $base-spacing-unit;
-  margin-right: $base-spacing-unit;
-}
-
-.content__main {
-  width: 57%;
-  float: left;
-  @media screen and (max-width: 50em) {
-    width: 100%;
-    float: none;
-  }
-}
-
-.content__sidebar {
-  margin-left: 3%;
-  width: 40%;
-  float: right;
-  @media screen and (max-width: 50em) {
-    @include trailer(2);
-    width: 100%;
-    float: none;
-    margin-left: 0;
-  }
 }
 
 // Layout styles
@@ -59,10 +22,18 @@ html, body {
   text-align: center;
 }
 
-.generic-skinny {
-  max-width: 35em;
-  margin: 0 auto;
-  @include leader(3);
-  padding: 1em;
-  border: 1px solid hsl(190, 13%, 65%);
+.row {
+  @include container();
+}
+
+.full {
+  @include span-columns(12 omega, 12);
+}
+
+.hero {
+  @include leader(2);
+  @include padding-leader(1);
+  @include padding-trailer(1);
+  background-color: #eee;
+  padding-left: 1em;
 }

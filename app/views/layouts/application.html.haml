@@ -10,7 +10,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0, minimum-scale=1.0", :name => "viewport"}/
     %link{:rel => "shortcut icon", :href=>"/images/favicon.png"}/
 
-    %title= content_for?(:title) ? yield(:title) : "Help Me Write"
+    %title= content_for?(:title) ? yield(:title) : ENV["HACK_NAME"]
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = yield(:head)
@@ -20,6 +20,9 @@
 
   %body{:class => "#{controller_name} #{action_name}"}
     .wrapper
+      - flash.each do |name, msg|
+        - if msg.is_a?(String)
+          = content_tag :div, msg, :id => "flash_#{name}"
       = yield
       = render "shared/footer/footer"
 
