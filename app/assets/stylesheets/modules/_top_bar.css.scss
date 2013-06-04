@@ -1,0 +1,61 @@
+.top-bar {
+  height: $base-spacing-unit*2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 400;
+  background:$secondaryColor;
+  color: $offWhite;
+}
+
+.top-bar__link {
+  color: $offWhite;
+  text-decoration: underline;
+}
+
+.top-bar__link:hover {
+  color: $offWhite;
+  text-decoration: none;
+}
+
+.top-bar__login {
+  margin: ($base-spacing-unit*0.45) $half-spacing-unit 0 0;
+}
+
+.top-bar__logo {
+  display: inline-block;
+  @include replace-text('/assets/hmw--compact.png', 0, 0);
+  min-width: $base-spacing-unit*2;
+  width: $base-spacing-unit*2;
+  height: $base-spacing-unit*2.5;
+  margin-left: $half-spacing-unit;
+  @media screen and (min-width: 30em) {
+    @include replace-text('/assets/hmw.png', 0, 0);
+    min-width: $base-spacing-unit*8;
+    @include trailer(0);
+  }
+}
+
+.top-bar__header {
+  float: left;
+  display: inline-block;
+}
+
+.sign-up-cta {
+  float: right;
+  margin-right: 1em;
+  color: hsl(189,20,55);
+  @include adjust-font-size-to(14px, 2);
+  a {
+    color: hsl(189,30,75);
+    text-decoration: none;
+    // line-height:  $base-spacing-unit * 2;
+  }
+}
+
+// @media only screen and (max-width: 500px) {
+//   .sign-up-cta {
+//     margin-left: $half-spacing-unit;
+//   }
+// }

@@ -1,0 +1,419 @@
+/*------- Reset -------*/
+
+form {
+  margin: 0;
+}
+
+.form--inline {
+  display: inline-block;
+}
+
+fieldset {
+  // padding: $base-spacing-unit;
+  // TODO this causes a weird issue with the first child
+  margin: 0;
+  border: none;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  @extend .gamma;
+  color: #929091; // TODO
+  border: 0;
+}
+
+label {
+  display: inline-block;
+  font-weight: bold;
+  @include trailer(1/12);
+  // margin-bottom: ($formSpacing / 2);
+  .light {
+    font-weight: 300;
+  }
+}
+
+
+/*------- Form Controls -------*/
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  display: inline-block;
+  // min-height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  min-height: 1em;
+  padding: 6px 9px;
+  // margin-bottom: @line-height-base / 2;
+  // margin-bottom: ($formSpacing * 1.5);
+  font-family: $base-font-family;
+  font-size: 1.25em;
+  font-weight: 300;
+  // line-height: (ms(0) + ($formSpacing * 1.5));
+  line-height: $base-line-height;
+  color: $base-font-color;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid $input-border-color;
+  border-radius: $input-border-radius;
+}
+
+// Reset appearance properties for textual inputs and textarea
+// Can't be on input[type=*] selectors or it's too specific
+input,
+select,
+textarea,
+.uneditable-input {
+  width: 100%;
+}
+
+// Reset width of input images, buttons, radios, checkboxes
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto; // Override of generic input selector
+}
+
+// Reset height since textareas have rows
+textarea {
+  height: auto;
+  max-width: 28em;
+  line-height: $base-line-height;
+}
+
+// Everything else
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  // Focus state
+  &:focus {
+    border-color: $blue;
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+  }
+}
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; /* IE8-9 */
+  line-height: normal;
+}
+
+// Set the height of select and file controls to match text inputs
+select,
+input[type="file"] {
+  // height: @input-height-base; /* In IE7, the height of the select element cannot be changed by height, only font-size. TODO: Check if this is still needed when dropping IE7 support */
+  // line-height: @input-height-base;
+}
+
+// Make select elements obey height by applying a border
+// TODO: See if this can be part of the above selector stack
+select {
+  border: 1px solid $input-border-color;
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+// Focus for select, file, radio, and checkbox
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  @include tab-focus();
+}
+
+/*------- Uneditable inputs -------*/
+
+
+// Make uneditable inputs look inactive
+.uneditable-input,
+.uneditable-textarea {
+  // TODO
+  // color: @grayLight;
+  // background-color: darken(@input-background, 1%);
+  border-color: $input-border-color;
+  // .box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
+  cursor: not-allowed;
+}
+
+// For text that needs to appear as an input but should not be an input
+.uneditable-input {
+  overflow: hidden; // prevent text from wrapping, but still cut it off like an input does
+  white-space: nowrap;
+}
+
+// Make uneditable textareas behave like a textarea
+.uneditable-textarea {
+  width: auto;
+  height: auto;
+}
+
+
+/*------- Placeholder -------*/
+
+input,
+textarea {
+  @include placeholder();
+}
+
+
+/*------- Input Groups -------*/
+
+.input-group {
+  display: inline-table;
+  // margin-bottom: ($formSpacing * 1.5);
+  &[class*="span"] {
+    float: none;
+    padding: none;
+  }
+
+  input,
+  select,
+  .uneditable-input {
+    width: 100%;
+  }
+}
+
+.input-group-addon,
+.input-group-button,
+.input-group input,
+.input-group .uneditable-input {
+  display: table-cell;
+  margin: 0;
+  border-radius: 0;
+}
+
+.input-group-addon,
+.input-group-button {
+  width: 1%;
+  vertical-align: middle;
+}
+
+.input-group-addon {
+  background: $input-border-color;
+  color: #929091; // TODO
+  padding: 0 .5em;
+  font-size: 1.25em;
+  font-weight: 300;
+  line-height: 1; // TODO
+  text-align: center;
+}
+
+.input-group input:first-child,
+.input-group .uneditable-input:first-child,
+.input-group-addon:first-child {
+  @include border-radius($input-border-radius 0 0 $input-border-radius);
+}
+
+.input-group-addon:first-child {
+  border-right: 0;
+}
+
+.input-group input:last-child,
+.input-group .uneditable-input:last-child,
+.input-group-addon:last-child {
+  @include border-radius(0 $input-border-radius $input-border-radius 0);
+}
+
+.input-group-addon:last-child {
+  border-left: 0;
+}
+
+/*------- Input Sizes -------*/
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  &.input-large {
+    @include at-breakpoint(30em 8) {
+      font-size: 2.25em;
+      line-height: 1.5;
+      margin-bottom: $base-line-height;
+    }
+  }
+  &.input-small {
+    // min-height: @input-height-small;
+    padding: 0 0.5em;
+    font-size: 1em;
+  }
+}
+
+.input-group--small {
+  @extend .input-group;
+  .input-group-addon {
+    font-size: 1em;
+  }
+}
+
+/*------- Image Uploader -------*/
+
+.drop-zone {
+  border: 2px dashed $input-border-color;
+  background: lighten($input-border-color, 7%);
+  margin-bottom: $base-line-height;
+  text-align: center;
+  -webkit-user-select: none;
+  color: #929091;
+  @include border-radius($input-border-radius);
+  padding: 4em;
+}
+
+.drop-zone--droppable {
+  background: lighten($input-border-color, 5%);
+}
+
+.drop-zone__heading {
+  display: block;
+  font-weight: 300;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+
+.drop-zone__sub {
+  a {
+    color: #929091;
+    font-weight: bold;
+  }
+}
+
+/*------- help -------*/
+.help {
+  color: #909192;
+  margin-bottom: .5em;
+}
+.help--inline {
+  @extend .help;
+  // display: inline-block;
+  display: none;
+}
+.help--block {
+  @extend .help;
+  // display: block;
+  display: none;
+  li {
+    margin-left: 1.5em;
+  }
+}
+
+/*------- form groups -------*/
+
+.form-group, .r {
+  @include trailer(1/3);
+}
+
+
+/*------- edit-bitsy-button -------*/
+
+.bitsy_button_editing_instructions {
+}
+
+.edit-bitsy-button {
+  border: 1px solid $makeshift-red;
+  border-radius: ($input-border-radius * 2);
+  background: $makeshift-red;
+  margin-bottom: $base-line-height;
+  padding: .75em .25em;
+  @include at-breakpoint(40em 12) {
+    @include span-columns(9, 12);
+  }
+  .edit-bitsy-button__logo {
+    display: inline-block;
+    padding: 0 .5em;
+    font-size: 1.25em;
+    vertical-align: middle;
+    font-weight: bold;
+    color: darken($makeshift-red, 20%);
+  }
+  label {
+    color: #fff;
+    margin: 0 1em;
+  }
+  input, .input-group {
+    width: 5em;
+  }
+}
+
+.edit-bitsy-button__free-toggle {
+  @include at-breakpoint(40em 12) {
+    @include span-columns(3 omega, 12);
+  }
+}
+
+/*------- error states -------*/
+.field-errors {
+  padding: 1em;
+  background-color: lighten($makeshift-red, 50);
+  h2 {
+    @include adjust-font-size-to($base-font-size*1.25, $lines: 1);
+  }
+}
+
+input.invalid, input.error {
+  border-color: $makeshift-red !important;
+  background: $makeshift-red !important;
+  color: #fff !important;
+  &::webkit-input-placeholder, &:moz-input-placeholder, &::moz-input-placeholder, &:ms-input-placeholder {
+    color: #fff !important;
+  }
+}
+
+label.error {
+  display: none !important;
+  // padding: 0.33em;
+  // color: #fff !important;
+  // background-color: $makeshift-red;
+  // position: absolute;
+  // bottom: -30px;
+  // left: 0;
+}

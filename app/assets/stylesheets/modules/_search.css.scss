@@ -1,0 +1,38 @@
+.people-list, .results-list {
+  @include leader(1);
+  @include trailer(1);
+  list-style-type: none;
+  > .person {
+    padding: 1em 0;
+    border-bottom: 1px solid lighten($txtColor, 30);
+    border-top: 1px solid lighten($txtColor, 30);
+    margin-bottom: 2px;
+    > span {
+      display: inline-block;
+    }
+    > .person-avatar {
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+    &:nth-last-of-type(1) {
+      @include trailer(1);
+    }
+  }
+
+  .idea {
+    @include leader(1);
+  }
+}
+
+.button-bar {
+  @include leader(1);
+  @include clearfix();
+  > .btn {
+    float: right;
+  }
+}
+
+#search-results-wrapper {
+  @include leader(2);
+}
+

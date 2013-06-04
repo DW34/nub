@@ -1,0 +1,63 @@
+@mixin button($color, $colorDarken: 35%, $borderDarken: 23%, $activeDarken: 10%, $white: false ) {
+  background: $color;
+  @if $white == true {
+    color: #fff !important;
+    text-shadow: 0 2px 0 darken($color, $borderDarken);
+  } @else {
+    color: darken($color, $colorDarken);
+  }
+  border-color: darken($color, $borderDarken);
+
+  &:hover, &:active, &:focus {
+    background: darken($color, $activeDarken);
+    @if $white == true {
+      color: #fff !important;
+    } @else {
+      color: darken($color, $colorDarken);
+    }
+  }
+}
+
+@mixin unstyled-link {
+  color: $base-font-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/*------- From Bootstrap -------*/
+
+@mixin tab-focus() {
+  // Default
+  outline: thin dotted #333;
+  // Webkit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+@mixin placeholder($color: $input-color-placeholder) {
+  &:-moz-placeholder            { color: $color; } // Firefox 4-18
+  &::-moz-placeholder           { color: $color; } // Firefox 19+
+  &:-ms-input-placeholder       { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+/*------- From Intuit.css -------*/
+
+// @mixin font-size($font-size, $line-height: true) {
+//   font-size: $font-size;
+//   font-size: ($font-size / $base-font-size) * 1rem;
+//   @if line-height == true {
+//     line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+//   }
+// }
+
+
+// Supply a width
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

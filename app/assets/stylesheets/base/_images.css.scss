@@ -1,0 +1,9 @@
+img {
+  max-width: 100%;
+  width: auto\9; // IE8
+  height: auto;
+  vertical-align: middle;
+  a & {
+    border: none;
+  }
+}

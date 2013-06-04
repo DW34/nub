@@ -1,0 +1,11 @@
+.identity-functionality__heading {
+  @include trailer(0);
+}
+
+.identity-functionality__list {
+  @extend .list--unstyled;
+}
+
+#email-edit-wrapper {
+  @include trailer(1);
+}

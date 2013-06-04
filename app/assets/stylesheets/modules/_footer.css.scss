@@ -1,0 +1,13 @@
+.site-footer {
+  @include leader(1);
+  @include padding-leader(0.5);
+  border-top: 1px solid $brand-color;
+  margin-left: $base-spacing-unit;
+  margin-right: $base-spacing-unit;
+  min-height: $base-spacing-unit*2;
+  background: url('/assets/hmw--linework.png') 15px -2px no-repeat;
+}
+
+.site-footer__info {
+  margin-left: $base-spacing-unit * 2.75;
+}

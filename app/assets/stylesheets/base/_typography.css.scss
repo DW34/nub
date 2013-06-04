@@ -1,0 +1,160 @@
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+
+@include establish-baseline;
+
+html {
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/*------- Headings -------*/
+
+/**
+ * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  @include header-font;
+}
+
+h1,.alpha{
+  // 48px 3em
+  @include adjust-font-size-to($h1-size, 2);
+  @include trailer(1, $h1-size);
+}
+h2,.beta{
+  // 40px 2.5em
+  @include adjust-font-size-to($h2-size, 2);
+  @include trailer(1, $h2-size);
+}
+h3,.gamma{
+  // 24px 1.5em
+  @include adjust-font-size-to($h3-size, 1);
+  @include trailer(1, $h3-size);
+}
+h4,.delta{
+  // 20px 1.25em
+  @include adjust-font-size-to($h4-size);
+  @include trailer(1, $h4-size);
+}
+h5,.epsilon{
+  // 20px 1.25em
+  @include adjust-font-size-to($h5-size);
+  @include trailer(1, $h5-size);
+}
+h6,.zeta{
+  // 16px 1em
+  @include adjust-font-size-to($h6-size);
+  @include trailer(1, $h6-size);
+}
+
+
+/**
+ * Heading groups and generic any-heading class.
+ * To target any heading of any level simply apply a class of `.hN`, e.g.:
+ *
+   <hgroup>
+       <h1 class=hN>inuit.css</h1>
+       <h2 class=hN>Best. Framework. Ever!</h2>
+   </hgroup>
+ *
+ */
+.hN{
+}
+hgroup .hN{
+    margin-bottom:0;
+}
+
+
+/**
+ * A series of classes for setting massive type; for use in heroes, mastheads,
+ * promos, etc.
+ */
+.giga{
+  @include adjust-font-size-to($giga-size, 4);
+  @include trailer(1, $giga-size);
+}
+.mega{
+  @include adjust-font-size-to($mega-size, 3);
+  @include trailer(1, $mega-size);
+}
+.kilo{
+  @include adjust-font-size-to($kilo-size, 2);
+  @include trailer(1, $kilo-size);
+}
+
+
+/*------- Body Text -------*/
+
+p {
+  margin: 0 0 rhythm(1);
+}
+
+.lead {
+  @include at-breakpoint(30em 8) {
+    @include adjust-font-size-to($h5-size, 1);
+    margin: 0 0 rhythm(1, 20px);
+  }
+}
+
+
+/*------- Lists -------*/
+
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 rhythm(1) rhythm(1);
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+li {
+  @include adjust-leading-to(1, $base-font-size);
+  // TODO: not sure about this -
+  // will it have implications when
+  // resizing li with ems?
+}
+
+.list--unstyled,
+.list--inline {
+  margin-left: 0;
+  list-style: none;
+}
+
+.list--inline > li {
+  display: inline-block;
+  padding: 0 .25em;
+}
+
+dl {
+  @include trailer(1);
+}
+
+dt,
+dd {
+  @include adjust-leading-to(1, $base-font-size);
+  // TODO: not sure about this -
+  // will it have implications when
+  // resizing with ems?
+}
+
+dt {
+}
+
+dd {
+  margin-left: $half-spacing-unit;
+}

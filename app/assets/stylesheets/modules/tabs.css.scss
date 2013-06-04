@@ -1,0 +1,69 @@
+.tabbed-nav {
+  background: $offWhite;
+  ul {
+    @extend .list--unstyled;
+    @include clearfix;
+    @media screen and (min-width: 26em) {
+      padding-left: 1em;
+    }
+  }
+}
+.tabbed-nav__item {
+  float: left;
+
+  @include transition(.1s linear all);
+  margin: 0 .25em;
+  &:first-child {
+    margin-left: 1em;
+  }
+  @media screen and (min-width: 26em) {
+    margin: 0 1em;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    a {
+      color: hsl(189,20,40);
+      text-decoration: none;
+    }
+  }
+
+  a {
+    color: hsl(189,20,60);
+    @include transition(.1s linear all);
+    padding: .25em 0;
+    @media screen and (min-width: 26em) {
+      padding: .5em 0;
+    }
+    display: inline-block;
+    @include adjust-font-size-to(14px);
+    font-weight: bold;
+  }
+}
+
+.tabbed-nav__item > a {
+  border-bottom: 5px solid $offWhite;
+}
+
+.tabbed-nav__item:hover > a {
+  border-bottom: 5px solid hsl(189,20,40);
+}
+
+.tabbed-nav__item .current, .tabbed-nav__item:hover .current {
+  color: hsl(189, 19%, 29%);
+  border-bottom: 5px solid hsl(189, 19%, 29%);
+}
+
+.tabbed-nav--tertiary {
+  @extend .tabbed-nav;
+  @include leader(-1);
+}
+
+.tabbed-nav--tertiary__item {
+  @extend .tabbed-nav__item;
+}
+
+.tabbed-nav--tertiary__item .current, .tabbed-nav--tertiary__item:hover .current {
+  border-bottom: 5px solid lighten($secondaryColor, 10);
+}

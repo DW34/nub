@@ -1,0 +1,23 @@
+.reports {
+  width: 100%;
+}
+
+.reports__header {
+  font-weight: bold;
+}
+
+.reports__header__row > td {
+  padding: $base-spacing-unit/4 $half-spacing-unit;
+}
+
+.reports__row:nth-child(odd) {
+  background: lighten($secondaryColor, 65);
+}
+
+.reports__row:nth-child(even) {
+
+}
+
+.reports__row > td {
+  padding: $base-spacing-unit/4 $half-spacing-unit;
+}

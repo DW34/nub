@@ -1,0 +1,134 @@
+@mixin moving-button {
+  &:active, &:active {
+    position: relative;
+    top: 1px;
+    border-bottom-width: 2px;
+    margin-bottom: 1px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: no-wrap;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  @include adjust-font-size-to(16px, 1.5);
+  padding: 0 1em;
+  text-align: center;
+  @include border-radius(.25em);
+  @include header-font;
+
+  &:focus {
+    @include tab-focus();
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+
+  &.disabled, &[disabled], fieldset[disabled] & {
+    cursor: default;
+    pointer-events: none;
+    @include opacity(.65);
+  }
+
+  .ss-icon {
+    font-size: .8125em;
+    line-height: 1;
+    margin-right: .5em;
+  }
+}
+
+.btn--small {
+  @include adjust-font-size-to(14px, 4/3);
+}
+
+.btn--bigger {
+  @include adjust-font-size-to(16px, 2);
+  padding: 0 1.5em;
+}
+
+.btn--huge {
+  @include adjust-font-size-to(24px, 2.5);
+}
+
+.btn--full {
+  width: 100%;
+  padding: 0;
+}
+
+.btn--generic {
+  background: #ddd;
+  color: $base-font-color;
+  border-style: solid;
+  border-width: 0 0 4px 0;
+  border-color: #bbb;
+  &:hover {
+    background: darken(#ddd, 10%);
+    color: $base-font-color;
+  }
+  // @include moving-button;
+}
+
+.btn--primary {
+  @extend .btn--generic;
+  @include button($btn-primary, $white: true);
+}
+
+.btn--secondary {
+  @extend .btn--generic;
+  @include button($btn-secondary, $white: true);
+}
+
+.btn--action {
+  @extend .btn--generic;
+  @include button($brand-color, $white: true);
+}
+
+.btn--warning {
+  @extend .btn--generic;
+  @include button($btn-warning, $white: true);
+}
+
+.btn--danger {
+  @extend .btn--generic;
+  @include button($btn-danger, $white: true);
+}
+
+.btn--white {
+  @extend .btn--generic;
+  @include button(#eee, $colorDarken: 60%);
+}
+
+.btn--twitter {
+  @extend .btn--generic;
+  @include button($twitter, $white: true);
+}
+
+.btn--facebook {
+  @extend .btn--generic;
+  @include button($facebook, $white: true);
+}
+
+.btn--pinterest {
+  @extend .btn--generic;
+  @include button($pinterest, $white: true);
+}
+
+.btn--primary--text {
+  @extend .btn;
+  border: 2px solid $brand-color;
+  color: $brand-color;
+}
+
+.btn--text {
+  @extend .btn;
+  border: 2px solid hsl(190, 13%, 70%);
+  color: hsl(190, 13%, 70%);
+  &:hover {
+    border-color: hsl(190, 13%, 65%);
+    color: hsl(190, 13%, 65%);
+  }
+}

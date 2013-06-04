@@ -1,0 +1,11 @@
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: darken($link-color, 5%);
+    text-decoration: underline;
+  }
+  &:focus {
+    @include tab-focus();
+  }
+}

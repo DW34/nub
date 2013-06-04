@@ -1,0 +1,372 @@
+// Module styles
+
+h4.subtitle {
+  font-size: 1em;
+}
+
+h3.large-title {
+  margin-top: 2em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid $txtColor;
+}
+
+.main {
+  margin-top: 2.5em;
+}
+
+// some headers don't look like headers
+.primary {
+  font-weight: 300;
+}
+
+.dashboard-ui {
+  //margin: 1.125em 0em;
+  position: relative;
+  margin-bottom: -7px;
+}
+
+.landing-wrapper {
+  @extend .header-wrapper;
+  margin-bottom: 1em;
+}
+
+.landing-heading {
+  font-size: 2em;
+  font-weight: 300;
+  text-align: center;
+}
+
+.idea-form {
+  @include clearfix();
+}
+
+.sidebar-ideas-list {
+  border-top: 1px solid $txtColor;
+  list-style-type: none;
+  > li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid $txtColor;
+  }
+}
+
+.landing-intro {
+  font-size: 1.333333333em;
+  text-align: center;
+  > a {
+    font-weight: 700;
+  }
+}
+
+.public-profile {
+  margin: 0;
+  font-weight: 300;
+  font-size: 1em;
+}
+
+.person-strapline {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+a.ss-icon:hover {
+  text-decoration: none;
+  color: darken($link-color, 20%);
+}
+
+.avatar {
+  img {
+    @include border-radius(3px);
+  }
+  vertical-align: middle;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+}
+
+.idea.archived, .idea.written {
+  h5 {
+    color: $grey;
+  }
+}
+
+// TODO: this should go
+.side-box {
+  padding: 2em;
+  margin-bottom: 2em;
+  background: $pale;
+  border-bottom: 3px solid $grey;
+}
+
+.tweet-box-cta {
+  margin-bottom: 0;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.tweet-box {
+  margin: 0.5em 0 2em;
+  font-size: 1em;
+  min-height: 6em;
+}
+
+#character-count {
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+  text-align: right;
+  display: block;
+}
+
+.search-box {
+  max-width: 30em;
+  @include clearfix();
+}
+
+.page-cta {
+
+  .button.large {
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: left;
+  }
+
+  i {
+    display: block;
+    float: left;
+  }
+
+  p {
+    font-size: 1.333333333em;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $darkGrey;
+  }
+
+}
+
+.makeshift-logo {
+  margin-left: 0.2em;
+  img {
+    margin-bottom: 3px;
+  }
+}
+
+.sidebar-highlight {
+  padding: 0 1.3333333em;
+  font-size: 1.333333333em;
+  font-weight: 300;
+}
+
+#writing-place-add {
+  display: none;
+}
+
+.settings-button {
+  display: inline-block;
+  position: relative;
+  bottom: 0;
+}
+
+.settings-button-padded {
+  margin-top: 3.8em;
+}
+
+
+#writing-place-new {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#writing-place-add {
+  display: inline-block;
+  margin-bottom: 2em;
+  display: none;
+}
+
+#writing-places {
+  margin-bottom: 2em;
+}
+
+.writing-place {
+  @include leader(1);
+}
+
+.writing-place-name, .writing-place-url {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.writing-places-list, .sidebar-nav {
+  list-style-type: none;
+  font-weight: 500;
+  > li {
+    margin-bottom: 1em;
+  }
+  .writing-place-name, .writing-place-url {
+    margin-bottom: 0;
+  }
+}
+
+.subscription {
+  margin: 1em 0;
+}
+
+#subscriptions .notice, #featured-people .notice {
+  display: none;
+}
+
+.important {
+  color: red;
+  font-weight: 700;
+}
+
+.more {
+  margin: 1em 2em 2em;
+  display: block;
+  font-weight: 700;
+}
+
+.validation-error {
+  padding: 0 15px;
+  font-style: italic;
+  color: $highlightColor;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+
+input[type=text].disabled {
+  color: $grey;
+}
+
+.form-label {
+  display: inline;
+}
+.page {
+  @include clearfix();
+}
+
+.generic-wrapper {
+  max-width: 700px;
+  width: 100%;
+  @include leader(2);
+  margin-left: $base-spacing-unit;
+  margin-right: $base-spacing-unit;
+  float: left;
+  display: inline-block;
+}
+
+.generic-sidebar {
+  max-width: 30%;
+  @include leader(2);
+  margin-left: $base-spacing-unit;
+  margin-right: $base-spacing-unit;
+  float: left;
+  display: inline-block;
+}
+
+.standard-padding {
+  margin-left: $base-spacing-unit;
+  margin-right: $base-spacing-unit;
+}
+
+.page-sidebar-nav {
+  margin: 0;
+  @include leader(1);
+}
+
+.page-sidebar-nav__item {
+  @extend .list--unstyled;
+}
+
+.padded {
+  margin-left: $base-spacing-unit;
+  margin-right: $base-spacing-unit;
+}
+
+.unread_counter {
+  display: none;
+}
+
+.faq-link {
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .mobile-header {
+    display: block;
+    position: relative;
+    h1 {
+      font-size: 1.333333333em;
+      margin-bottom: 1em;
+    }
+  }
+
+  #mobile-nav-button {
+    @include border-radius(3px);
+    display: block;
+    width: 2.777777778em;
+    height: 2.222222222em;
+    position: absolute;
+    z-index: 200;
+    top: 0.7em;
+    right: 15px;
+    border: 1px solid $highlightColor;
+    background: $beige url('mobile-menu-icon.png') center center no-repeat;
+    box-shadow: 0px 2px $paleOrange;
+  }
+
+  .header-wrapper {
+    background: #fff;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .dashboard-ui {
+    background: $beige;
+  }
+
+  .is-active {
+    background: $highlightColor;
+  }
+
+  #curtain {
+    z-index: 500;
+  }
+
+  .mobile {
+    display: inherit;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .generic-wrapper {
+    float: none;
+    display: block;
+    width: auto;
+    max-width: 100%;
+  }
+
+}
+
+.extra-padding-top {
+  padding-top: 2em;
+}
+
+.sessions-nav {
+  @include leader(1);
+}
+.sessions-nav__ul {}
+.sessions-nav__ul li a {
+  color: hsl(190, 13%, 65%);
+}

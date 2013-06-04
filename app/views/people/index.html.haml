@@ -1,0 +1,22 @@
+%h3 People
+.span8
+  %table.table.table-condensed
+    %thead
+      %tr
+        %th Nickname
+        %th Email
+        %th Registered
+        %th Role
+        %th
+        %th
+    %tbody
+      - @people.each do |person|
+        %tr
+          %td= link_to person.name, person
+          %td= person.email
+          %td= person.created_at.to_date
+          %td= person.roles.first.name.titleize unless person.roles.first.nil?
+          %td
+            %a.btn.btn-mini{"data-toggle" => "modal", :href => "#role-options-#{person.id}", :type => "button"} Change role
+            = render person
+          %td= link_to("Delete person", person_path(person), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini') unless person == current_person

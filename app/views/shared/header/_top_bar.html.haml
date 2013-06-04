@@ -1,0 +1,8 @@
+%section.top-bar{class: add_profile_classes}
+  %header.top-bar__header
+    %a{:href => root_url}
+      %h1.top-bar__logo Help me write
+  .sign-up-cta
+    = link_to 'Sign in with Twitter', person_omniauth_authorize_path(:twitter), class: 'top-bar__link' #, :class => 'btn btn--action'
+    or
+    = link_to 'find out more', faq_path, class: 'top-bar__link'

@@ -1,0 +1,191 @@
+$cubic-bezier: cubic-bezier(0.190,1.000,0.220,1.000);
+
+@media screen and (max-width: 26em) {
+  .js-menu body {
+    overflow: hidden;
+  }
+
+  #sidebar {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: -14em;
+    width: 14em;
+    height: 100%;
+  }
+
+  .nav--primary {
+    margin-top: 0;
+    padding: 0 1em;
+  }
+
+  #menu-link {
+    position: fixed;
+    top: .5em;
+    left: 1em;
+    color: inherit;
+    @include unstyled-link;
+    .ss-icon {
+      @include adjust-font-size-to(24px, 1);
+      color: hsl(189, 19%, 29%);
+    }
+  }
+
+  .js-advanced #sidebar {
+    left: 0;
+    @include transform(translate3d(-14em, 0, 0));
+    backface-visibility: hidden;
+  }
+
+  .js-advanced .wrapper {
+    @include transition(transform 500ms $cubic-bezier);
+    @include transform(translate3d(0,0,0));
+  }
+
+  .js-advanced #sidebar .block {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.7;
+    @include transition(opacity 300ms 100ms $cubic-bezier, transform 500ms $cubic-bezier);
+    @include transform(translate3d(70%, 0, 0) scaleX(0.9) scaleY(0.9));
+  }
+
+  .js-advanced.js-menu #sidebar .block {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    @include transform(translate3d(0, 0, 0) scaleX(1) scaleY(1));
+  }
+
+  .js-basic.js-menu .wrapper {
+    left: 14em;
+    position: relative;
+  }
+
+  .js-advanced.js-menu .wrapper {
+    @include transform(translate3d(14em, 0, 0));
+  }
+
+  .site-header-nav__logo {
+    @include replace-text('/assets/hmw.png', 0, 0);
+    @include trailer(0);
+    top: 0;
+    margin: 0 0 0 $base-spacing-unit*0.4;
+    width: $base-spacing-unit*8;
+    height: $base-spacing-unit*2.3;
+  }
+}
+
+@media screen and (min-width: 26em) {
+  #sidebar {
+    position: fixed;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 .5em 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: auto;
+  }
+
+  #menu-link {
+    display: none;
+  }
+  .site-header-nav__logo {
+    @include replace-text('/assets/hmw--compact.png', 0, 0);
+    @include trailer(0);
+    top: 0;
+    margin: 0 0 0 $base-spacing-unit*0.4;
+    width: $base-spacing-unit*2;
+    height: $base-spacing-unit*2.3;
+  }
+
+}
+
+
+.nav {
+  ul {
+    @extend .list--unstyled;
+    margin-bottom: 0;
+  }
+}
+
+
+.nav--primary, .nav--secondary, .nav--tertiary { @extend .nav; }
+
+.nav--primary {
+  .nav__item {
+    overflow: hidden;
+    @media screen and (min-width: 26em) {
+      width: 72px;
+      text-align: center;
+      a {
+        display: block;
+        height: 72px;
+      }
+    }
+  }
+}
+
+.nav__item__icon {
+  @extend .ss-icon;
+  display: inline-block;
+  margin-right: .25em;
+  @include adjust-font-size-to(16px, 1.5);
+  @media screen and (min-width: 26em) {
+    @include adjust-font-size-to(24px, 1.5);
+    margin-right: 0;
+    display: block;
+  }
+}
+
+.nav__item__label {
+  display: inline-block;
+  @include adjust-font-size-to(16px, 1.5);
+  @media screen and (min-width: 26em) {
+    @include adjust-font-size-to(12px, .5);
+    display: block;
+  }
+}
+
+.sidebar--light {
+  background: #E5ECEC;
+  @include box-shadow(-2px 0 4px 0 rgba(0,0,0,.1) inset);
+  .nav__item {
+    a {
+      color: #809599;
+      &:hover {
+        color: darken(#809599, 20%);
+        text-decoration: none;
+      }
+    }
+    &.nav__item--active {
+      a {
+        color: #41595C;
+      }
+    }
+  }
+}
+
+.sidebar--dark {
+  background: #3D5459;
+  @include box-shadow(-6px 0 0 #35474B inset);
+
+  .nav__item {
+    a {
+      color: #9EB0B3;
+      &:hover {
+        color: lighten(#9EB0B3, 20%);
+        text-decoration: none;
+      }
+    }
+    &.nav__item--active {
+      a {
+        color: #EEF7F8;
+      }
+    }
+  }
+  .nav__item__icon, .nav__item__label {
+    text-shadow: 0px 1px 1px rgba(#1C2628, .60);
+  }
+}

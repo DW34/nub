@@ -1,0 +1,133 @@
+.one-two-three {
+  padding: $base-spacing-unit;
+  background: $offWhite;
+  @include border-radius(10px);
+}
+
+.how-it-works {
+  @extend .list--unstyled;
+}
+
+.how-it-works__item {
+  @include trailer(1);
+  overflow: hidden;
+  @include clearfix;
+  color: lighten($secondaryColor, 10);
+  @media screen and (max-width: 50em) {
+    text-align: center;
+  }
+}
+.how-it-works__number {
+  width: 20%;
+  display: inline-block;
+  float: left;
+
+  @media screen and (min-width: 120em) {
+    width: 15%;
+  }
+  @media screen and (max-width: 70em) {
+    width: 25%;
+  }
+  @media screen and (max-width: 63em) {
+    width: 30%;
+  }
+  @media screen and (max-width: 59em) {
+    width: 35%;
+  }
+  @media screen and (max-width: 50em) {
+    width: 100%;
+    display: block;
+    float: none;
+    text-align: center;
+  }
+}
+
+.how-it-works__number > span {
+  font-size: 1.5em;
+  width: 2em;
+  height: 2em;
+  display: inline-block;
+  margin-right: $base-spacing-unit*0.75;
+  background: lighten($secondaryColor, 50);
+  color: white;
+  text-align: center;
+  margin-bottom: $base-spacing-unit;
+  font-weight: bold;
+  @include padding-leader(0.25);
+  @include border-radius(9999px);
+  text-shadow: 0px 1px 2px rgba($secondaryColor, .20);
+
+  @media screen and (max-width: 50em) {
+    display: block;
+    margin: 0 auto $base-spacing-unit auto;
+    font-size: 1.25em;
+  }
+}
+
+.how-it-works__text {
+  width: 80%;
+  float: right;
+  display: inline-block;
+  @media screen and (min-width: 120em) {
+    width: 85%;
+  }
+  @media screen and (max-width: 70em) {
+    width: 75%;
+  }
+  @media screen and (max-width: 63em) {
+    width: 70%;
+  }
+  @media screen and (max-width: 59em) {
+    width: 65%;
+  }
+  @media screen and (max-width: 50em) {
+    width: 100%;
+  }
+}
+
+.hiw-toggle {
+  text-align: center;
+  cursor: pointer;
+  display: none;
+  &.top {
+    @include trailer(0);
+  }
+
+  @media screen and (max-width: 50em) {
+    display: block;
+    &.bottom {
+      display: none;
+      @include leader(1);
+    }
+  }
+}
+
+.how-it-works-wrapper {
+  @media screen and (max-width: 50em) {
+    display: none;
+  }
+}
+
+.hiw-toggle__button {
+  // position: absolute;
+  // right: 0px;
+  // top: -5px;
+  margin-left: $half-spacing-unit;
+  background: lighten($secondaryColor, 50);
+  @include border-radius(9999px);
+  text-align: center;
+  color: $secondaryColor;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  &:hover {
+    color: lighten($secondaryColor, 30);
+    text-decoration: none;
+  }
+  .ss-icon {
+    display: block;
+    padding-left: $base-spacing-unit*0.3;
+    padding-top: $base-spacing-unit*0.25;
+    font-size: 80%;
+  }
+}

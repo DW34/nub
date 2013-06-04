@@ -1,0 +1,23 @@
+.sticky-flash-wrapper, .flash-wrapper {
+  background-color: #fff;
+  @include padding-leader(0.5);
+  @include padding-trailer(0.5);
+  border-bottom: 1px solid $highlightColor;
+}
+
+.flash-wrapper {
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 500;
+}
+
+.sticky-flash .centered, .flash .centered {
+	text-align: center;
+}
+
+.sticky-flash, .flash {
+  margin-left: $base-spacing-unit;
+  margin-right: $base-spacing-unit;
+}
