@@ -23,6 +23,7 @@
       - flash.each do |name, msg|
         - if msg.is_a?(String)
           = content_tag :div, msg, :id => "flash_#{name}"
+      = render "shared/header/nav"
       = yield
       = render "shared/footer/footer"
 
