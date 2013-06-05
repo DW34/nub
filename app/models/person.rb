@@ -8,6 +8,8 @@ class Person < ActiveRecord::Base
   col :current_sign_in_ip, :type => :string
   col :last_sign_in_ip, :type => :string
   col :name, :type => :string
+  col :avatar, :type => :string
+  col :nickname, :type => :string
   col :confirmation_token, :type => :string
   col :unconfirmed_email, :type => :string
   col :invitation_token, :type => :string, :limit => 60
@@ -34,7 +36,8 @@ class Person < ActiveRecord::Base
   # add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   rolify
-  devise :omniauthable, :invitable, :validatable, :database_authenticatable, :registerable, :async, :rememberable, :trackable
+  devise :omniauthable, :invitable, :validatable, :database_authenticatable, :async, :rememberable, :trackable
+  # Add :registerable for password login
 
   attr_accessible :email, :password, :password_confirmation, :name, :uid, :nickname
   attr_accessible :role_ids, :as => :admin

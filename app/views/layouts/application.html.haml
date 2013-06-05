@@ -15,8 +15,7 @@
     = javascript_include_tag "application"
     = yield(:head)
     = csrf_meta_tags
-    = render "shared/analytics/ga"
-    = render "shared/analytics/kissmetrics"
+    = render "shared/analytics/segment"
 
   %body{:class => "#{controller_name} #{action_name}"}
     .wrapper
@@ -27,6 +26,4 @@
       = yield
       = render "shared/footer/footer"
 
-    = render "shared/analytics/gosquared"
-    = render "shared/analytics/mixpanel"
-    = render "shared/analytics/intercom"
+    = render "shared/analytics/segment_reporting"

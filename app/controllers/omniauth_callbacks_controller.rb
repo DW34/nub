@@ -25,6 +25,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     auth_attr = Identity.build_profile(auth, provider)
 
     if identity.update_attributes(auth_attr)
+      @person = nil
       if identity.person.nil?
         @person = Person.new(name: identity.name, nickname: identity.nickname)
         @person.identities << identity # can we make this prettier?

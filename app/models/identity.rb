@@ -1,5 +1,5 @@
 class Identity < ActiveRecord::Base
-  col :avatar_address
+  col :avatar
   col :bio, :type => :text
   col :email
   col :name
@@ -12,7 +12,7 @@ class Identity < ActiveRecord::Base
   col :created_at, :type => :datetime, :null => false
   col :updated_at, :type => :datetime, :null => false
 
-  attr_accessible :avatar_address, :bio, :email, :name, :nickname, :provider, :uid, :person_id, :oauth_token, :oauth_secret
+  attr_accessible :avatar, :bio, :email, :name, :nickname, :provider, :uid, :person_id, :oauth_token, :oauth_secret
   belongs_to :person, counter_cache: true, touch: true
 
   after_save :cache_avatar_on_person
@@ -41,7 +41,7 @@ class Identity < ActiveRecord::Base
         :oauth_secret => auth['credentials']['secret'],
         :name => name,
         :nickname => nickname,
-        :avatar_address => avatar,
+        :avatar => avatar,
         :provider => 'twitter',
         :bio => bio
       }

@@ -3,3 +3,4 @@ class PersonRole < ActiveRecord::Base
   col :role_id, :type => :integer, :null => false
 end
 PersonRole.auto_upgrade!
+PersonRole.all
