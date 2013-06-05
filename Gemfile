@@ -48,3 +48,4 @@ gem 'dalli'
 gem 'memcachier'
 gem 'resque'
 gem 'intercom'
+gem "simple-navigation"
