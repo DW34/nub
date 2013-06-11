@@ -13,8 +13,10 @@ The nub of an idea. This is a Rails app that we can clone when we want to do a h
 
 * Devise + Omniauth/Twitter for auth
 * Cancan + Rolify for permissions
-* Compass + Makeshift baseline SASS for styles
+* Compass + Susy + Makeshift baseline SASS for styles
 * Resque for background jobs
+* Memcache + Dalli for caching
+* Mandrill for transactional emails
 
 ## Analytics + third party APIs
 
