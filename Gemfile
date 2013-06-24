@@ -48,4 +48,7 @@ gem 'dalli'
 gem 'memcachier'
 gem 'resque'
 gem 'intercom'
+gem 'intercom-rails', '~> 0.2.21'
 gem "simple-navigation"
+gem "asset_sync"
+gem "honeybadger"
