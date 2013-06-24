@@ -17,6 +17,7 @@ gem 'omniauth', '~> 1.1.4'
 gem 'omniauth-twitter', '~> 0.0.16'
 gem 'jquery-rails'
 gem "unicorn", ">= 4.3.1"
+gem "thin"
 gem "pg", ">= 0.15.0"
 gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => :development
