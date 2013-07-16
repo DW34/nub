@@ -27,7 +27,7 @@ The nub of an idea. This is a Rails app that we can clone when we want to do a h
 # Setup
 
 * Clone this repo.
-* Create a new postgres database - `createdeb some_app_development --user postgres`
+* Create a new postgres database - `createdb some_app_development --user postgres`
 * Create a database YAML file - copy config/database.yml.example
 * Create a .env file based on .env.example
 * Add a Twitter app on http://dev.twitter.com and put the credentials in .env
